@@ -3,10 +3,11 @@ public class Engine {
     FuelType f; 
     double currentfuelLevel;
     double maxfuelLevel; 
-    boolean enoughFuel; 
+    boolean enoughFuel;
 
-    public Engine(FuelType f, double currentfuelLevel, double maxfuelLevel, FuelType FuelType, boolean enoughFuel) {
-        //this.FuelType = FuelType; need to figure out FuelType 
+
+    public Engine(FuelType f, double maxfuelLevel, double currentfuelLevel, boolean enoughFuel) {
+        this.f = f; 
         this.currentfuelLevel = currentfuelLevel;
         this.maxfuelLevel = maxfuelLevel; 
         this.enoughFuel = enoughFuel; 
@@ -28,14 +29,12 @@ public class Engine {
         }
     }
 
-    // public static void main(String[] args) {
-    //     Engine myEngine = new Engine(FuelType.ELECTRIC, 100.0);
-    //     while (myEngine.go()) {
-    //         System.out.println("Choo choo!");
-    //     }
-    //     System.out.println("Out of fuel.");
-    // }
-
-    //add accessors? Check java book and online
+    public static void main(String[] args) {
+        Engine myEngine = new Engine(FuelType.ELECTRIC, 100.0, 100.0, true);
+        while (myEngine.go()) {
+            System.out.println("Choo choo!");
+        }
+        System.out.println("Out of fuel.");
+    }
 
 }

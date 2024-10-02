@@ -3,11 +3,12 @@ import java.util.ArrayList;
 public class Car {
     ArrayList<Passenger> passengersOnboard;
     int maxCapacity; 
+    String p;
 
-    public Car(int maxCapacity, ArrayList<Passenger> passengersOnboard) {
+    public Car(int maxCapacity) {
         this.maxCapacity = maxCapacity; 
         maxCapacity = 50; 
-        //passengersOnboard.asList(0); initialize the size of the ArrayList, syntax??  
+        ArrayList <Passenger> passengersOnBoard = new ArrayList <Passenger>();
     }
 
     public int getCapacity(){
@@ -20,12 +21,12 @@ public class Car {
 
     public void addPassenger(Passenger p){ //needs to be changed to boolean to return either true or false 
        
-       //passengersOnboard.add(Passenger p); 
+        passengersOnboard.add(p); 
        
     }
 
     public void removePassenger(Passenger p){
-        //passengersOnboard.remove(Passenger p); 
+        passengersOnboard.remove(p); 
     }
 
     public void printManifest(){

@@ -11,11 +11,11 @@ public class Train {
     }
 
     public void getEngine() {
-        //System.out.println(trainEngine); 
+        //System.out.println(trainEngine); ??
     }
 
     public void getCar(int i) {
-        //System.out.println(Cars[i])
+        //System.out.println(Cars.get(i))
     }
 
     public int getMaxCapacity(){
