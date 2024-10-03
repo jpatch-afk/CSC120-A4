@@ -5,13 +5,13 @@ public class Train {
     int maxTrainCapacity; 
 
     public Train(FuelType f, int numCars, double maxfuelLevel, int passengerCapacity) {
-      //  Engine trainEngine = new Engine()
+      //Engine trainEngine = new Engine(FuelType.ELECTRIC, 5, 100.0, 100) 
       //ArrayList for cars
 
     }
 
     public void getEngine() {
-        //System.out.println(trainEngine); ??
+        //System.out.println(trainEngine); 
     }
 
     public void getCar(int i) {

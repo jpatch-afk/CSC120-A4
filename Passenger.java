@@ -1,32 +1,43 @@
 public class Passenger {
     
-    String name; //private was originally in the code, but causing an error 
+    String name; 
+    int c; 
 
-    public Passenger(String name) {
+
+    public Passenger(String name, int c) {
         this.name = name;
+        this.c = c;
 
     }
      
-    //public boolean boardCar(Car c){
-        // if (passengersOnBoard.size < maxCapacity) {
-        //    return c.addPassenger(null); 
-        //System.out.println("Passenger added successfully!")
-        // } 
-        // else { 
-        //  return System.out.println("This car is full. Please pick another one.")}
+    public void boardCar(String name, Car c){
+        if (passengersOnBoard.size() < maxCapacity) {
+        c.addPassenger(name); 
+        System.out.println("Passenger added successfully!");
+        } 
+        else { 
+         System.out.println("This car is full. Please pick another one."); 
+        }
    
-   // }
+        }
 
-//public boolean getOffCar(Car c){
-        // if () { 
-        // the above if statement should check if the passenger was actually inside the stated car; use java website to find the syntax to code
-        //    return c.addPassenger(null); 
-        //System.out.println("Passenger added successfully!")
-        // } 
-        // else { 
-        //  return System.out.println("This car is full. Please pick another one.")}
-   
-   // }
+    public void getOffCar(String name, Car c){
+            if (passengersOnBoard.contains(name)) { 
+            c.removePassenger(name); 
+            System.out.println("Passenger removed successfully!");
+            } 
+            else { 
+            System.out.println("This car is full. Please pick another one.");
+        }
+    
+    }
 
+public void main (String[] args) {
+    Car myCar = new Car(50);
+    Passenger newPassenger = new Passenger("Sophie Brown", 4); 
+    newPassenger.boardCar(name, c); 
+}
 
 }
+
+

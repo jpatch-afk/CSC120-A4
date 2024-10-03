@@ -1,14 +1,13 @@
 import java.util.ArrayList;
 
 public class Car {
-    ArrayList<Passenger> passengersOnboard;
     int maxCapacity; 
     String p;
+    ArrayList <Passenger> passengersOnBoard = new ArrayList <>();
 
     public Car(int maxCapacity) {
         this.maxCapacity = maxCapacity; 
-        maxCapacity = 50; 
-        ArrayList <Passenger> passengersOnBoard = new ArrayList <Passenger>();
+        
     }
 
     public int getCapacity(){
@@ -16,27 +15,28 @@ public class Car {
     }
 
     public int remainingSeats(){
-       return maxCapacity - passengersOnboard.size(); 
+       return maxCapacity - (passengersOnBoard.size()); 
     }
 
-    public void addPassenger(Passenger p){ //needs to be changed to boolean to return either true or false 
-       
-        passengersOnboard.add(p); 
-       
+    public void addPassenger(Passenger p){ 
+        passengersOnBoard.add(p); 
     }
 
     public void removePassenger(Passenger p){
-        passengersOnboard.remove(p); 
+        passengersOnBoard.remove(p); 
     }
 
     public void printManifest(){
-        if (passengersOnboard.size() > 0) {
-            System.out.println(passengersOnboard); 
+        if (passengersOnBoard.size() > 0) {
+            System.out.println(passengersOnBoard); 
         }
         else {
             System.out.println("This car is empty. Consider filling it with passengers.");
         }
     }
 
-    //main to check if everything works 
+    public static void main (String[] args) {
+        Car newCar = new Car(50); 
+        newCar.getCapacity();
+    }
     }
