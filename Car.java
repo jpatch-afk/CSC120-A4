@@ -37,6 +37,6 @@ public class Car {
 
     public static void main (String[] args) {
         Car newCar = new Car(50); 
-        newCar.getCapacity();
+        newCar.remainingSeats();
     }
     }
