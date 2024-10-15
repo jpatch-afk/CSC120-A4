@@ -1,8 +1,8 @@
 public class Engine {
 
-    FuelType f; 
-    double currentfuelLevel;
-    double maxfuelLevel; 
+    private FuelType f; 
+    private double currentfuelLevel;
+    private double maxfuelLevel; 
     boolean enoughFuel;
 
 
@@ -13,7 +13,19 @@ public class Engine {
         this.enoughFuel = enoughFuel; 
     }
 
-    public void refuel() {
+    public double getcurrentfuelLevel() {
+        return this.currentfuelLevel; 
+    }
+
+    public double getmaxfuelLevel() {
+        return this.maxfuelLevel; 
+    }
+
+    public FuelType getFuelType() {
+        return this.f; 
+    }
+
+    public void refuel(){
         currentfuelLevel = maxfuelLevel; 
         enoughFuel = true; 
     }
@@ -25,11 +37,11 @@ public class Engine {
             return enoughFuel == true; 
         }
         else if (currentfuelLevel == 0) {
-            System.out.println("Fuel Level is 0. Refuel recommmended.");
+            System.out.println("Fuel Level is 0. Refuel recommended.");
             return enoughFuel == false; 
         }
         else {
-            return enoughFuel == false;
+            return enoughFuel == false; 
         }
     }
 
