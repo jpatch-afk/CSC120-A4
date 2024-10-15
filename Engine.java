@@ -24,8 +24,12 @@ public class Engine {
         if (currentfuelLevel > 0) {
             return enoughFuel == true; 
         }
-        else {
+        else if (currentfuelLevel == 0) {
+            System.out.println("Fuel Level is 0. Refuel recommmended.");
             return enoughFuel == false; 
+        }
+        else {
+            return enoughFuel;
         }
     }
 
