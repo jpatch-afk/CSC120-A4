@@ -29,7 +29,7 @@ public class Engine {
             return enoughFuel == false; 
         }
         else {
-            return enoughFuel;
+            return enoughFuel == false;
         }
     }
 
