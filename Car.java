@@ -1,17 +1,16 @@
 import java.util.ArrayList;
 
 public class Car {
-    int maxCapacity; 
+    private int maxCapacity; 
     String p;
-    ArrayList <Passenger> passengersOnBoard = new ArrayList <>();
+    private ArrayList <Passenger> passengersOnBoard = new ArrayList <Passenger>();
 
     public Car(int maxCapacity) {
         this.maxCapacity = maxCapacity; 
-        
     }
 
     public int getCapacity(){
-        return maxCapacity; 
+        return this.maxCapacity; 
     }
 
     public int remainingSeats(){
@@ -19,11 +18,28 @@ public class Car {
     }
 
     public void addPassenger(Passenger p){ 
-        passengersOnBoard.add(p); 
+        if (passengersOnBoard.size() < maxCapacity) {
+            if (passengersOnBoard.contains(p)) {
+                System.out.println("Passenger is already on board.");
+            }
+            else {
+                passengersOnBoard.add(p); 
+            }
+        }
+        else {
+            System.out.println("Car is full. Cannot add passenger. Try again."); 
+        } 
     }
 
     public void removePassenger(Passenger p){
-        passengersOnBoard.remove(p); 
+        if (passengersOnBoard.contains(p)) {
+            passengersOnBoard.remove(p); 
+            System.out.println("Passenger successfully removed.");
+        }
+        else {
+            System.out.println("Passenger is not on board.");
+        }
+        
     }
 
     public void printManifest(){
@@ -39,6 +55,4 @@ public class Car {
         Car newCar = new Car(50); 
         newCar.remainingSeats();
     }
-    }
-
-
+}
