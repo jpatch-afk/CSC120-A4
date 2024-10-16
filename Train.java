@@ -1,17 +1,15 @@
+import java.util.ArrayList; 
+
 public class Train {
 
-    int numCars; 
-    int passengerCapacity;
-    int maxTrainCapacity; 
-
     public Train(FuelType f, int numCars, double maxfuelLevel, int passengerCapacity) {
-      //Engine trainEngine = new Engine(FuelType.ELECTRIC, 5, 100.0, 100);
-      //ArrayList <int> Cars = new ArrayList <>(); 
+      private final new_Engine = new Engine(FuelType.ELECTRIC, 5, 100.0, 100);
+      private ArrayList <Car> Cars = new ArrayList <Car>(); 
 
     }
 
     public void getEngine() {
-        //System.out.println(trainEngine); 
+        //System.out.println(new_Engine); 
     }
 
     public void getCar(int i) {
