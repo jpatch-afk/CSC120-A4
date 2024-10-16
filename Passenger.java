@@ -12,21 +12,21 @@ public class Passenger {
      
     public void boardCar(String name, Car c){
         if (passengersOnBoard.size() < maxCapacity) {
-        c.addPassenger(name); 
-        System.out.println("Passenger added successfully!");
+            c.addPassenger(name); 
+            System.out.println("Passenger added successfully!");
         } 
         else { 
-         System.out.println("This car is full. Please pick another one."); 
+            System.out.println("This car is full. Please pick another one."); 
         }
    
         }
 
     public void getOffCar(String name, Car c){
-            if (passengersOnBoard.contains(name)) { 
+        if (passengersOnBoard.contains(name)) { 
             c.removePassenger(name); 
             System.out.println("Passenger removed successfully!");
-            } 
-            else { 
+        } 
+        else { 
             System.out.println("This car is full. Please pick another one.");
         }
     

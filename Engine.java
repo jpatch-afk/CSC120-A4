@@ -5,7 +5,13 @@ public class Engine {
     private double maxfuelLevel; 
     boolean enoughFuel;
 
-
+    /**
+     * Constructor 
+     * @param f
+     * @param maxfuelLevel
+     * @param currentfuelLevel
+     * @param enoughFuel
+     */
     public Engine(FuelType f, double maxfuelLevel, double currentfuelLevel, boolean enoughFuel) {
         this.f = f; 
         this.currentfuelLevel = currentfuelLevel;
@@ -13,23 +19,42 @@ public class Engine {
         this.enoughFuel = enoughFuel; 
     }
 
+    /**
+     * Accessor for currentfuelLevel
+     * @return currentfuelLevel 
+     */
     public double getcurrentfuelLevel() {
         return this.currentfuelLevel; 
     }
 
+    /**
+     * Accessor for the engine's maximum fuel level 
+     * @return maxfuelLevel
+     */
     public double getmaxfuelLevel() {
         return this.maxfuelLevel; 
     }
 
+    /**
+     * Accessor for the fuel type of the engine 
+     * @return f 
+     */
     public FuelType getFuelType() {
         return this.f; 
     }
 
+    /**
+     * Resets the current fuel level to the maximum set: refuels the engine
+     */
     public void refuel(){
         currentfuelLevel = maxfuelLevel; 
         enoughFuel = true; 
     }
 
+    /**
+     * Makes the engine go; checks the fuel levels and returns whether there is enough to run or stops 
+     * @return enoughFuel 
+     */
     public boolean go() {
         currentfuelLevel -= 5; 
         System.out.println(currentfuelLevel); 
@@ -45,6 +70,10 @@ public class Engine {
         }
     }
 
+    /**
+     * Main; runs the entire program 
+     * @param args
+     */
     public static void main(String[] args) {
         Engine myEngine = new Engine(FuelType.ELECTRIC, 100.0, 100.0, true);
         while (myEngine.go()) {
@@ -52,5 +81,4 @@ public class Engine {
         }
         System.out.println("Out of fuel.");
     }
-
 }
